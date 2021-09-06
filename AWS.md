@@ -107,4 +107,10 @@ s3.listBuckets(function(err, data) {
 
 https://www.mysql.com/products/workbench/
 
-2) 
+2) 연결전 체크
+
+![image](https://user-images.githubusercontent.com/69338643/132173329-06aff703-534e-4b93-9960-d2eec3be7dc6.png)
+![image](https://user-images.githubusercontent.com/69338643/132173352-5f020443-5df7-4e52-a8d3-dca733a42b36.png)
+
+
+
