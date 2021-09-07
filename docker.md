@@ -40,7 +40,7 @@
 - 컨테이너 오케스트레이션 플렛폼: Docker swarm,  Kubernetes를 통해 편리하게 배포, 관리
 
 
-
+---
 #### 3. 도커 설치하기
 
 https://docs.docker.com/engine/install/ubuntu/
@@ -55,6 +55,7 @@ https://docs.docker.com/desktop/windows/install/
 https://docs.docker.com/desktop/mac/install/
 
 
+---
 #### 4. 도커 이미지란
 
 - Linux 가져오면, docker 이미지 켜면 linux가 온 것
@@ -65,10 +66,51 @@ https://docs.docker.com/desktop/mac/install/
 - 이미지만 맞춰서는 어려운 부분이 있음
   - node 10ver. 동일한 우분투이더라도 버전이 다르면 작동이 안될 수 있음. 그 안에 돌아가는 sw환경까지 맞추는 것이 바로 docker file임 
 
+---
+#### 5. 도커 파일
 
+- Dockerfile: 이미지를 빌드하는데 필요한 모든 명령을 순서대로 포함하는 텍스트 파일
+  - ex. node 버전 설치하고 mysql 버전 뭐하고, 명령은 뭘 실행하고, 등등을 순서대로 적어둠
 
+```dockerfile
+FROM ubuntu:18.04
+COPY . /app
+RUN make /app
+CMD python /app/app.py
+```
 
+---
+#### 6. 도커 컨테이너
 
+- ex. 웹서버: 서버 하나로는 성능이 안된다? 웹서버 컨테이너 늘려 복사해서 컨테이너 늘리고 분산처리해주면 됨. <br>
+서로 독립되어있기 때문에 영향을 주지 않음. 컨테이너 하나가 설령 멈춰도 다른 컨테이너가 영향을 받지 않음
 
+---
+#### 7. 도커 컨테이너 생성하기
+
+cmd창에
+> docker run -i -t ubuntu:14.04
+
+![image](https://user-images.githubusercontent.com/69338643/132297633-80ac015a-abfa-4cf6-858a-d69d149fb14f.png)
+
+이 자체가 ubuntu 환경이 된 것
+
+- 나가는 방법
+  - 서버 유지 o: [ctrl] + p + q 
+  - 서버 유지 x: exit
+---
+#### 8. 컨테이너 애플리케이션 구축하기
+
+> docker images
+
+> docker search wordpress
+
+> docker pull wordpress
+
+https://hub.docker.com/_/wordpress
+
+```
+docker run --name fastcampus-docker -p 8080:80 -d wordpress
+```
 
 
