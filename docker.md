@@ -113,4 +113,21 @@ https://hub.docker.com/_/wordpress
 docker run --name fastcampus-docker -p 8080:80 -d wordpress
 ```
 
+---
+#### 9. Node.js 앱 만들기
+
+> npm install -g docker
+
+> docker build . -t fastcampus-docker/node-web-app
+
+하면 images에 생기게 됨
+
+
+[CMD 창에서 할 것]
+
+> docker run --name fc-docker -p 47561:8080 -d fastcampus-docker/node-web-app
+
+- 이후 Containers / Apps에 port가 47561로서 열 수 있게 됨
+
+![image](https://user-images.githubusercontent.com/69338643/132334940-2f34e5ef-563d-46ef-826e-3b215475cc05.png)
 
